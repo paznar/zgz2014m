@@ -6,7 +6,8 @@ switch ($request['action'])
         echo "Error 404: Por más que busco, no encuentro.";
     break;
     case '405':
-        echo "Error 405: La dirección está mu mal puesta";
+        echo "Error 405: La dirección está muy mal puesta";
     break;
 }
+
 
