@@ -24,9 +24,9 @@ include_once '../modules/Core/src/Router/models/parseUrl.php';
 
 $request = parseURL($_SERVER['REQUEST_URI']);
 
-// echo "<pre> Request:" ;
-// print_r($request);
-// echo "</pre>";
+ echo "<pre> Request:" ;
+ print_r($request);
+ echo "</pre>";
 
 switch($request['controller'])
 {
@@ -39,7 +39,7 @@ switch($request['controller'])
     break;
     case 'error':
         ob_start();
-        include_once '../modules/Application/src/Application/controllers/error.php';
+            include_once '../modules/Application/src/Application/controllers/error.php';
         $view=ob_get_contents();
         ob_end_clean();
     break;
