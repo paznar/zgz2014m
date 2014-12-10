@@ -1,5 +1,11 @@
 <?php
 
+// echo strtotime ("November 11, 1952");
+
+// echo mktime (0, 0, 0, 11, 11, 1952); // November 11, 1952
+echo gmmktime(0, 0, 0, 1, 1, 1970);
+
+die;
 $data = explode('/', $_SERVER['REQUEST_URI']);
 include_once '../modules/Core/src/Router/models/parseUrl.php';
 $request = parseURL($_SERVER['REQUEST_URI']);
