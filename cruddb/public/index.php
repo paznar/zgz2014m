@@ -1,11 +1,5 @@
 <?php
 
-// echo strtotime ("November 11, 1952");
-
-// echo mktime (0, 0, 0, 11, 11, 1952); // November 11, 1952
-echo gmmktime(0, 0, 0, 1, 1, 1970);
-
-die;
 $data = explode('/', $_SERVER['REQUEST_URI']);
 include_once '../modules/Core/src/Router/models/parseUrl.php';
 $request = parseURL($_SERVER['REQUEST_URI']);
@@ -23,13 +17,8 @@ switch($request['controller'])
         include_once '../modules/Application/src/Application/controllers/home.php';
         $view=ob_get_contents();
         ob_end_clean();
+        include_once '../modules/Application/src/Application/layouts/home.phtml';
     break;
-//     case 'authentication':
-//             ob_start();
-//             include_once '../modules/Application/src/Application/controllers/authentication.php';
-//             $view=ob_get_contents();
-//             ob_end_clean();
-//     break;
     case 'login':
         ob_start();
             include_once '../modules/Application/src/Application/controllers/login.php';   
@@ -43,7 +32,7 @@ switch($request['controller'])
         $view=ob_get_contents();       
         ob_end_clean();
 
-        //include_once '../modules/Application/src/Application/layouts/dashboard.phtml';
+        include_once '../modules/Application/src/Application/layouts/dashboard.phtml';
         break;
 
     case 'error':
@@ -55,7 +44,3 @@ switch($request['controller'])
         break;
 }
 
-
-//include_once '../modules/Application/src/Application/layouts/dashboard.phtml';
-include_once '../modules/Application/src/Application/layouts/home.phtml';
-//include_once '../modules/Application/src/Application/layouts/signin.phtml';
