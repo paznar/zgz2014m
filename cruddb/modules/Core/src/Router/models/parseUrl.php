@@ -35,7 +35,7 @@ function parseURL()
             // Si en el array hay un valor en la segunda clave, se asigna a la variable
             $action = isset($parts[1]) ? $parts[1] : '';
                
-            $validActions = array ('insert', 'update', 'delete', 'select');
+            $validActions = array ('insert', 'update', 'delete', 'select', 'index');
             // Si la accion es un valor valido...
             if (in_array($action, $validActions)) {
                 // Si ademas se han pasado parametros en la url se asignan a una variable
