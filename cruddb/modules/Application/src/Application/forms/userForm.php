@@ -88,6 +88,7 @@ $userForm = array(
     'city'=> array(
         'type'=>'select',
         'name'=>'city',
+//         'table'=>array('cities', 'idcity', 'city'),
         'options'=>array('zaragoza'=>'Zaragoza', 'madrid'=>'Madrid', 'barcelona'=>'Barcelona'),
         'value'=>array('zaragoza'),
         'label'=>'Ciudad',
@@ -100,7 +101,7 @@ $userForm = array(
     'pets'=> array(
         'type'=>'checkbox',
         'name'=>'pets',
-        'options'=>array('cat'=>'Gato', 'dog'=>'Perro'),
+        'options'=>array('cat'=>'Gato', 'dog'=>'Perro', 'tiger'=>'Tigre','lion'=>'León'),
         'value'=>array('cat'),
         'label'=>'Mascotas',
         'hint'=>'Selecciona tus mascotas',
@@ -112,7 +113,10 @@ $userForm = array(
     'languages'=> array(
         'type'=>'selectmultiple',
         'name'=>'languages',
-        'options'=>array('english'=>'Inglés', 'french'=>'Francés', 'german'=>'Alemán'),
+        'options'=>array('english'=>'Inglés', 
+                        'french'=>'Francés', 
+                        'german'=>'Alemán',
+                        'spanish'=>'Castellano'),
         'value'=>array('english'),
         'label'=>'Idiomas',
         'hint'=>'',
