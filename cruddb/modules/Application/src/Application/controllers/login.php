@@ -1,13 +1,17 @@
 <?php
+
+/**
+ * Controlador de las funciones de autenticación y logout de usuarios.
+ * 
+ * @param array $request using $request['action']
+ * 
+ */
 echo "<pre>";
 print_r($_POST);
 echo "</pre>";
 
-
 switch ($request['action'])
 {
-
-   
    case 'logout':
         unset($_SESSION['email']);
         session_regenerate_id();
@@ -26,8 +30,8 @@ switch ($request['action'])
            // SELECT * FROM users WHERE id;
            	
            $sql = "SELECT iduser, name, email FROM users
-               WHERE password = '".$_POST['password']."' 
-                 AND email ='".$_POST['email']."'";
+                WHERE password = '".$_POST['password']."' 
+                AND email ='".$_POST['email']."'";
                  
            // Retornar el data
            $result = mysqli_query($link, $sql);
@@ -38,20 +42,11 @@ switch ($request['action'])
                $_SESSION['email']=$_POST['email'];
                
               header("Location: /users/select");
-              exit();
            }
-           
-           while ($row=mysqli_fetch_assoc($result))
+           else
            {
-               
-            echo "<pre>";
-                print_r($row);
-            echo "</pre>";
-           }
-           
-           
-           header("Location: /login/index");
-            
+               header("Location: /login/index");
+           }                   
        }
        else 
        {
