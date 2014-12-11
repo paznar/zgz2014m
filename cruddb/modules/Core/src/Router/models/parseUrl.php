@@ -35,7 +35,7 @@ function parseURL()
             $action = isset($parts[1]) ? $parts[1] : '';
                
 
-            $validActions = array ('insert', 'update', 'delete', 'select', 'index', 'login');
+            $validActions = array ('insert', 'update', 'delete', 'select', 'index', 'logout');
 
             // Si la accion es un valor valido...
             if (in_array($action, $validActions)) {
