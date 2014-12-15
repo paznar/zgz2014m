@@ -84,15 +84,15 @@ class Mysql implements AdapterInterface, MysqlInterface
                 WHERE ".key($id)."='".$id[key($id)]."'";
         // Retornar el data
         $result = mysqli_query($this->link, $sql);
-        //$row = mysqli_fetch_assoc($result);
+        
+        $rows = array();
         
         while ($row = mysqli_fetch_assoc($result))
         {
             $rows[] = $row;
         }
         
-        return $rows;
-        
+        return $rows;      
     }
     
     /**
